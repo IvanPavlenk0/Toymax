@@ -47,17 +47,18 @@ class MatchColorsViewController: UIViewController {
         coloredShape.frame.size.height = 100
         coloredShape.frame.size.width = 100
         coloredShape.layer.cornerRadius = 50
+        coloredShape.alpha = 0
         setupView()
-//        coloredShape.alpha = 0
+        
         // create and add UIPanGestureRecognizer on coloredShape
         let pan = UIPanGestureRecognizer(target: self, action: #selector(MatchColorsViewController.wasDragged(_:)))
         coloredShape.addGestureRecognizer(pan)
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        coloredShape.fadeOut()
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        coloredShape.fadeOut()
+    }
     
     @objc func wasDragged(_ sender: UIPanGestureRecognizer) {
         if timeRemaining == 0 {
@@ -81,7 +82,9 @@ class MatchColorsViewController: UIViewController {
                     twoColors = getTwoColors()
                     leftView.backgroundColor = twoColors[0]
                     rightView.backgroundColor = twoColors[1]
+                    coloredShape.alpha = 0
                     setupView()
+                    viewDidAppear(true)
                 }
             }
         }
@@ -99,14 +102,10 @@ class MatchColorsViewController: UIViewController {
                 // set new score at UserDefault if condition 'true'(new score is bigger)
                 UserDefaults.standard.set(score, forKey: kScore)
             }
-            // create finish label
-            let label = UILabel(frame: CGRect(x: self.view.bounds.width / 2 - 100, y: self.view.bounds.height / 2 - 50, width: 200, height: 100))
-            label.layer.cornerRadius = 50
-            label.layer.masksToBounds = true // what it doing?
-            label.backgroundColor = .systemIndigo
-            label.text = "Your score \(score)"
-            label.textAlignment = NSTextAlignment.center
-            self.view.addSubview(label)
+            // show finish view
+            let gameOverVC = GameOverReusableView(identifireVC: "MatchColorsViewController")
+            gameOverVC.modalPresentationStyle = .overFullScreen
+            present(gameOverVC, animated: true, completion: nil)
         }
         timerLabel.text = "\(timeRemaining)"
     }
@@ -117,6 +116,7 @@ class MatchColorsViewController: UIViewController {
         score = 0
         timeRemaining = 10
         self.viewDidLoad()
+        viewDidAppear(true)
     }
     
     private func getTwoColors() -> [UIColor] {
@@ -137,13 +137,12 @@ class MatchColorsViewController: UIViewController {
         view.addSubview(coloredShape)
         coloredShape.isUserInteractionEnabled = true
     }
-
 }
 
-//extension UIView{
-//    private func fadeOut() {
-//        UIView.animate(withDuration: 1.0, delay: 0.0, animations: {
-//            self.alpha = 1.0
-//        })
-//    }
-//}
+extension UIView{
+    func fadeOut() {
+        UIView.animate(withDuration: 0.2, delay: 0.0, animations: {
+            self.alpha = 1.0
+        })
+    }
+}

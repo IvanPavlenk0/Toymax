@@ -8,22 +8,26 @@
 import UIKit
 
 class GameOverReusableView: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    private let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+    private let games = GameLibrary()
+    //take identifireVC when create instance GameOverReusableView(identifireVC: String)
+    private var identifireVC: String!
+    // used 'convenience init' and ' self.init()' bacause GameOverReusableView.xib
+    convenience init(identifireVC: String){
+        self.init()
+        self.identifireVC = identifireVC
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        let startVC = storyBoard.instantiateViewController(withIdentifier: "StartScreenCollectionViewController")
+        startVC.modalPresentationStyle = .fullScreen
+        present(startVC, animated: false, completion: nil)
     }
-    */
-
+    
+    @IBAction func restartButtonTapped(_ sender: UIButton) {
+        let restartVC = storyBoard.instantiateViewController(withIdentifier: identifireVC)
+        restartVC.modalPresentationStyle = .fullScreen
+        present(restartVC, animated: false, completion: nil)
+    }
 }
