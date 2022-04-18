@@ -15,10 +15,11 @@ class GameLibrary {
         var identifierVC: String
     }
     
-    var gameWithName = [Int: GameInfo]()
+    var gameWithName = [GameInfo]()
     
     init() {
-        gameWithName[0] = GameInfo(gameName: "Match colors", gameAsset: "MatchColors", identifierVC: "MatchColorsViewController")
-        gameWithName[1] = GameInfo(gameName: "Snake", gameAsset: "Snake", identifierVC: "SnakeViewController")
+        gameWithName.append(GameInfo(gameName: "Match colors", gameAsset: "MatchColors", identifierVC: "MatchColorsViewController"))
+        gameWithName.append(GameInfo(gameName: "Snake", gameAsset: "Snake", identifierVC: "SnakeViewController"))
     }
+    
 }

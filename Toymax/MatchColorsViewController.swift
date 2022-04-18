@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MatchColorsViewController: UIViewController {
+class MatchColorsViewController: BaseViewController {
     
     // MARK: - Outlets
     
@@ -24,8 +24,8 @@ class MatchColorsViewController: UIViewController {
     private let colors: [UIColor] = [.systemRed, .systemGreen, .systemGray, .systemMint,
                                      .systemOrange, .systemIndigo, .systemPink, .systemYellow]
     private var twoColors: [UIColor] = []
-    private var score: Int = 0
-    private var timeRemaining: Int = 10
+    private var score: Int!
+    private var timeRemaining: Int!
     private var timer: Timer!
     private let kScore = "kScore"
     
@@ -34,6 +34,8 @@ class MatchColorsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        score = 0
+        timeRemaining = 10
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tik), userInfo: nil, repeats: true)
         // reserve place at UserDefaults and show score in Label
         let scoreFromUserDefauts = UserDefaults.standard.integer(forKey: kScore)
@@ -77,7 +79,7 @@ class MatchColorsViewController: UIViewController {
                 if view.backgroundColor == coloredShape.backgroundColor && view.frame.intersects(coloredShape.frame) {
                     coloredShape.removeFromSuperview()
                     score += 1
-                    scoreLabel.text  = "\(score)"
+                    scoreLabel.text  = "\(score.description)"
                     // choose new colors and create new item
                     twoColors = getTwoColors()
                     leftView.backgroundColor = twoColors[0]
@@ -103,19 +105,19 @@ class MatchColorsViewController: UIViewController {
                 UserDefaults.standard.set(score, forKey: kScore)
             }
             // show finish view
-            let gameOverVC = GameOverReusableView(identifireVC: "MatchColorsViewController")
+            let gameOverVC = GameOverViewController(identifireVC: "MatchColorsViewController")
             gameOverVC.modalPresentationStyle = .overFullScreen
             present(gameOverVC, animated: true, completion: nil)
         }
-        timerLabel.text = "\(timeRemaining)"
+        timerLabel.text = "\(timeRemaining.description)"
     }
     
     @IBAction private func resetButtonPressed(_ sender: UIButton) {
         timer.invalidate()
-        self.loadView()
-        score = 0
-        timeRemaining = 10
-        self.viewDidLoad()
+        loadView()
+//        score = 0
+//        timeRemaining = 10
+        viewDidLoad()
         viewDidAppear(true)
     }
     
@@ -137,6 +139,7 @@ class MatchColorsViewController: UIViewController {
         view.addSubview(coloredShape)
         coloredShape.isUserInteractionEnabled = true
     }
+    
 }
 
 extension UIView{
