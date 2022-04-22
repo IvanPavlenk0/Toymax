@@ -201,7 +201,7 @@
                                                     <attributes>
                                                         <color key="NSBackgroundColor" red="0.6839950904786819" green="0.82757355994784954" blue="0.20048084580307385" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="NSColor" red="0.30396954439083074" green="0.20135480952814264" blue="0.61784866175700714" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" size="25" name=".SFNS-Regular"/>
+                                                        <font key="NSFont" metaFont="system" size="25"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
