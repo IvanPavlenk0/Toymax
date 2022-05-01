@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SnakeViewController: BaseViewController {
+class SnakeViewController: BaseViewController, GameManageable {
     
     let myView = UIView()
     var timer: Timer!
@@ -16,6 +16,10 @@ class SnakeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupView()
+    }
+    
+    private func setupView() {
         myView.backgroundColor = .systemRed
         myView.frame.size.height = 100
         myView.frame.size.width = 100
@@ -23,7 +27,7 @@ class SnakeViewController: BaseViewController {
         myView.center = view.center
         myView.alpha = 0
         view.addSubview(myView)
-        
+        // adjust timer
         timeRemaining = 5
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tik), userInfo: nil, repeats: true)
     }
@@ -41,9 +45,14 @@ class SnakeViewController: BaseViewController {
             timeRemaining -= 1
         } else {
             timer.invalidate()
-            let gameOverVC = GameOverViewController(identifireVC: "MatchColorsViewController")
-            gameOverVC.modalPresentationStyle = .overFullScreen
+            let gameOverVC = GameOverViewController(game: self)
             present(gameOverVC, animated: true, completion: nil)
         }
     }
+    
+    func restart() {
+        setupView()
+        viewDidAppear(true)
+    }
+    
 }

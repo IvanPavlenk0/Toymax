@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MatchColorsViewController: BaseViewController {
+class MatchColorsViewController: BaseViewController, GameManageable {
     
     // MARK: - Outlets
     
@@ -34,6 +34,14 @@ class MatchColorsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupView()
+        
+        // create and add UIPanGestureRecognizer on coloredShape
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(MatchColorsViewController.wasDragged(_:)))
+        coloredShape.addGestureRecognizer(pan)
+    }
+    
+    private func setupView() {
         score = 0
         timeRemaining = 10
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tik), userInfo: nil, repeats: true)
@@ -50,11 +58,7 @@ class MatchColorsViewController: BaseViewController {
         coloredShape.frame.size.width = 100
         coloredShape.layer.cornerRadius = 50
         coloredShape.alpha = 0
-        setupView()
-        
-        // create and add UIPanGestureRecognizer on coloredShape
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(MatchColorsViewController.wasDragged(_:)))
-        coloredShape.addGestureRecognizer(pan)
+        addColorView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -67,7 +71,7 @@ class MatchColorsViewController: BaseViewController {
             // stop UIPanGestureRecognizer
             sender.isEnabled = false
         }
-        let translation = sender.translation(in: self.view)// what it doing?
+        let translation = sender.translation(in: self.view)// what it doing? можно через location
         let coloredShape = sender.view!// what it doing?
         coloredShape.center = CGPoint(x: coloredShape.center.x + translation.x,
                                       y: coloredShape.center.y + translation.y)// what it doing?
@@ -85,7 +89,7 @@ class MatchColorsViewController: BaseViewController {
                     leftView.backgroundColor = twoColors[0]
                     rightView.backgroundColor = twoColors[1]
                     coloredShape.alpha = 0
-                    setupView()
+                    addColorView()
                     viewDidAppear(true)
                 }
             }
@@ -105,8 +109,7 @@ class MatchColorsViewController: BaseViewController {
                 UserDefaults.standard.set(score, forKey: kScore)
             }
             // show finish view
-            let gameOverVC = GameOverViewController(identifireVC: "MatchColorsViewController")
-            gameOverVC.modalPresentationStyle = .overFullScreen
+            let gameOverVC = GameOverViewController(game: self)
             present(gameOverVC, animated: true, completion: nil)
         }
         timerLabel.text = "\(timeRemaining.description)"
@@ -114,11 +117,7 @@ class MatchColorsViewController: BaseViewController {
     
     @IBAction private func resetButtonPressed(_ sender: UIButton) {
         timer.invalidate()
-        loadView()
-//        score = 0
-//        timeRemaining = 10
-        viewDidLoad()
-        viewDidAppear(true)
+        restart()
     }
     
     private func getTwoColors() -> [UIColor] {
@@ -133,19 +132,23 @@ class MatchColorsViewController: BaseViewController {
         return anotherTwoColors
     }
     
-    private func setupView() {
+    private func addColorView() {
         coloredShape.center = view.center
         coloredShape.backgroundColor = twoColors.randomElement()!
         view.addSubview(coloredShape)
         coloredShape.isUserInteractionEnabled = true
     }
     
+    func restart() {
+        loadView() // ?
+        setupView()
+        viewDidAppear(true)
+    }
+    
 }
 
 extension UIView{
     func fadeOut() {
-        UIView.animate(withDuration: 0.2, delay: 0.0, animations: {
-            self.alpha = 1.0
-        })
+        UIView.animate(withDuration: 0.2, delay: 0.0, animations: { self.alpha = 1.0 })
     }
 }

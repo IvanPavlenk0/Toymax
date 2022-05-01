@@ -8,21 +8,17 @@
 import UIKit
 import AVFoundation
 
-class ChooseNumberViewController: BaseViewController {
+class ChooseNumberViewController: BaseViewController, GameManageable {
     
     @IBOutlet private var buttons: [UIButton]!
     @IBOutlet weak var givenNumberLabel: UILabel!
     
     private let audioNumbers = ["zero", "one", "two", "three", "four", "five",
                                "six", "seven", "eight", "nine", "ten"]
-    private let numberOfButtons = 3 ///убрать
     private var currentButtonsTitle: [Int]!
     private var curentVoiceNumber: Int!
     private var priorityList: [Int] = []
     var audioPlayerForNumber: AVAudioPlayer?
-    
-    //connect ChooseNumberViewController with SceneDelegate(look at code there)
-    var delegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +43,7 @@ class ChooseNumberViewController: BaseViewController {
         var potentialNumber = firstNumber
         currentButtonsTitle = []
         currentButtonsTitle.append(potentialNumber)
-        while currentButtonsTitle.count < numberOfButtons {
+        while currentButtonsTitle.count < buttons.count {
             if currentButtonsTitle.contains(potentialNumber) {
                 potentialNumber = Int.random(in: 0..<audioNumbers.count)
             } else {
@@ -58,20 +54,15 @@ class ChooseNumberViewController: BaseViewController {
     }
     
     private func setButtonsTitle() {
-        var counter = currentButtonsTitle.count - 1
-        buttons.forEach { (button) in
-            button.setTitle(currentButtonsTitle[counter].description, for: .normal)
-            counter -= 1
+        for index in 0..<buttons.count {
+            buttons[index].setTitle(currentButtonsTitle[index].description, for: .normal)
         }
     }
     
     @IBAction private func buttonPressed(_ sender: UIButton) {
         if sender.currentTitle == curentVoiceNumber.description {
-            print("Красава")
             if priorityList.isEmpty {
-                print("Game Over")
-                let gameOverVC = GameOverViewController(identifireVC: "ChooseNumberViewController")
-                gameOverVC.modalPresentationStyle = .overFullScreen //включить в свой контроллер
+                let gameOverVC = GameOverViewController(game: self)
                 present(gameOverVC, animated: true, completion: nil)
             } else {
                 numberCycle()
@@ -82,13 +73,16 @@ class ChooseNumberViewController: BaseViewController {
     }
     
     private func playAudio(number: Int) {
-        
         if  let path = Bundle.main.path(forResource: audioNumbers[number], ofType: "m4a") {
             audioPlayerForNumber = try? AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
             audioPlayerForNumber?.play()
         } else {
             print("Audiofile is missing")
         }
+    }
+    
+    func restart() {
+      setupView()
     }
     
 }
