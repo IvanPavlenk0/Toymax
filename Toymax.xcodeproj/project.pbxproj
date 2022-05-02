@@ -13,6 +13,7 @@
 		4F233BB027F4B9B20042492F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F233BAF27F4B9B20042492F /* Assets.xcassets */; };
 		4F233BB327F4B9B20042492F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F233BB127F4B9B20042492F /* LaunchScreen.storyboard */; };
 		4F3B18742808A010007204CD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B18732808A00F007204CD /* BaseViewController.swift */; };
+		4F47061E281E69F6008F32F9 /* UICollectionViewCell+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F47061D281E69F6008F32F9 /* UICollectionViewCell+Identifier.swift */; };
 		4F8F3A86281969C000418C82 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F3A84281969C000418C82 /* GameCollectionViewCell.swift */; };
 		4F8F3A87281969C000418C82 /* GameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F8F3A85281969C000418C82 /* GameCollectionViewCell.xib */; };
 		4F8F3A8C2819A78000418C82 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F3A8A2819A78000418C82 /* SectionHeader.swift */; };
@@ -50,6 +51,7 @@
 		4F233BB227F4B9B20042492F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F233BB427F4B9B20042492F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3B18732808A00F007204CD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4F47061D281E69F6008F32F9 /* UICollectionViewCell+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Identifier.swift"; sourceTree = "<group>"; };
 		4F8F3A84281969C000418C82 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F8F3A85281969C000418C82 /* GameCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameCollectionViewCell.xib; sourceTree = "<group>"; };
 		4F8F3A8A2819A78000418C82 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				4FA9F80A2812944A00A39E0C /* UIView+RoundedBorder.swift */,
+				4F47061D281E69F6008F32F9 /* UICollectionViewCell+Identifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				4F233BAB27F4B9B00042492F /* MatchColorsViewController.swift in Sources */,
 				4FC5B99F2800BCE3000CB522 /* StartViewController.swift in Sources */,
 				4F233BA727F4B9B00042492F /* AppDelegate.swift in Sources */,
+				4F47061E281E69F6008F32F9 /* UICollectionViewCell+Identifier.swift in Sources */,
 				4F3B18742808A010007204CD /* BaseViewController.swift in Sources */,
 				4F8F3A8C2819A78000418C82 /* SectionHeader.swift in Sources */,
 				4FEC12C12806FE0900DAB1EE /* SnakeViewController.swift in Sources */,

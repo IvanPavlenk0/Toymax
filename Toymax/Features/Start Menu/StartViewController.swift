@@ -11,9 +11,6 @@ class StartViewController: BaseViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    //connect this ViewController with SceneDelegate(look at code there)
-//    var delegate = UIApplication.shared.delegate as! AppDelegate
-    
     let games = GameLibrary()
     
     override func viewDidLoad() {
@@ -23,7 +20,6 @@ class StartViewController: BaseViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(SectionHeader.nib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.identifier)
-//        collectionView.register(UINib(nibName: "SectionHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeader")
     }
     
 }
@@ -62,8 +58,8 @@ extension StartViewController: UICollectionViewDelegate {
     // when cell was selected
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //select gameVC
-        let viewController = games.gameWithName[indexPath.row].viewController
-        viewController.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+        let viewController = games.gameWithName[indexPath.row].viewController()
+        viewController.modalPresentationStyle = .fullScreen
         // show VC
         present(viewController, animated: true, completion: nil)
     }

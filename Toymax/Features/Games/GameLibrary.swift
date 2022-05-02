@@ -12,15 +12,12 @@ class GameLibrary {
     struct GameInfo {
         var gameName: String
         var gameAsset: String
-        var viewController: UIViewController
+        var viewController: () -> (UIViewController)
     }
     
-    var gameWithName = [GameInfo]()
-    
-    init() {
-        gameWithName.append(GameInfo(gameName: "Match colors", gameAsset: "MatchColors", viewController: MatchColorsViewController()))
-        gameWithName.append(GameInfo(gameName: "Snake", gameAsset: "Snake", viewController: SnakeViewController()))
-        gameWithName.append(GameInfo(gameName: "Numbers", gameAsset: "Numbers", viewController: ChooseNumberViewController()))
-    }
+    let gameWithName: [GameInfo] = [
+        (GameInfo(gameName: "Match colors", gameAsset: "MatchColors", viewController: { MatchColorsViewController() })),
+        (GameInfo(gameName: "Snake", gameAsset: "Snake", viewController: { SnakeViewController() })),
+        (GameInfo(gameName: "Numbers", gameAsset: "Numbers", viewController: { ChooseNumberViewController() }))]
     
 }

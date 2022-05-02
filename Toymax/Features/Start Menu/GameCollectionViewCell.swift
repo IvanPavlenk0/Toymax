@@ -14,12 +14,21 @@ class GameCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nameGameLabel: UILabel!
     
-    static let identifier = "GameCollectionViewCell"
+//    static var identifier: String {
+//        return String(describing: self)
+//    }
+//    
+//    static func nib() -> UINib {
+//        return UINib(nibName: identifier,
+//                     bundle: nil)
+//    }
     
-    static func nib() -> UINib {
-        return UINib(nibName: "GameCollectionViewCell",
-                     bundle: nil)
-    }
+//    static let identifier = "GameCollectionViewCell"
+//
+//    static func nib() -> UINib {
+//        return UINib(nibName: "GameCollectionViewCell",
+//                     bundle: nil)
+//    }
     
     public func configure(with nameGame: String) {
         nameGameLabel.text = nameGame
