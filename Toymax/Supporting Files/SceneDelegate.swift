@@ -19,9 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.windowScene = windowScene
         
         let startViewController = StartViewController(nibName: "StartViewController", bundle: nil)
-        let navigation = UINavigationController(rootViewController: startViewController)
+//        let navigation = UINavigationController(rootViewController: startViewController)
         self.window = window
-        window.rootViewController = navigation
+        window.rootViewController = startViewController
         window.makeKeyAndVisible()
     }
 

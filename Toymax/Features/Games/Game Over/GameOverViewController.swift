@@ -16,7 +16,7 @@ class GameOverViewController: BaseViewController {
     private var game: GameManageable! = nil
 
     // used 'convenience init' and 'self.init()' bacause GameOverReusableView.xib
-    convenience init(game: GameManageable){
+    convenience init(game: GameManageable) {
         self.init()
         self.game = game
         self.modalPresentationStyle = .overFullScreen

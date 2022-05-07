@@ -14,6 +14,12 @@
 		4F233BB327F4B9B20042492F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F233BB127F4B9B20042492F /* LaunchScreen.storyboard */; };
 		4F3B18742808A010007204CD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B18732808A00F007204CD /* BaseViewController.swift */; };
 		4F47061E281E69F6008F32F9 /* UICollectionViewCell+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F47061D281E69F6008F32F9 /* UICollectionViewCell+Identifier.swift */; };
+		4F470620282186CC008F32F9 /* NumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F47061F282186CC008F32F9 /* NumberModel.swift */; };
+		4F47062228218845008F32F9 /* LetterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F47062128218845008F32F9 /* LetterModel.swift */; };
+		4F47062628266BD4008F32F9 /* MahjongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F47062428266BD4008F32F9 /* MahjongViewController.swift */; };
+		4F47062728266BD4008F32F9 /* MahjongViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F47062528266BD4008F32F9 /* MahjongViewController.xib */; };
+		4F47062A28266DDF008F32F9 /* MahjongCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F47062828266DDF008F32F9 /* MahjongCollectionViewCell.swift */; };
+		4F47062B28266DDF008F32F9 /* MahjongCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F47062928266DDF008F32F9 /* MahjongCollectionViewCell.xib */; };
 		4F8F3A86281969C000418C82 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F3A84281969C000418C82 /* GameCollectionViewCell.swift */; };
 		4F8F3A87281969C000418C82 /* GameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F8F3A85281969C000418C82 /* GameCollectionViewCell.xib */; };
 		4F8F3A8C2819A78000418C82 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F3A8A2819A78000418C82 /* SectionHeader.swift */; };
@@ -33,8 +39,8 @@
 		4FA9F80D2817D94300A39E0C /* SnakeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA9F80C2817D94200A39E0C /* SnakeViewController.xib */; };
 		4FA9F80F2817FC6600A39E0C /* MatchColorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA9F80E2817FC6600A39E0C /* MatchColorsViewController.xib */; };
 		4FA9F813281814BC00A39E0C /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA9F812281814BC00A39E0C /* StartViewController.xib */; };
-		4FC5255E280DE027000BAC13 /* ChooseNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5255C280DE027000BAC13 /* ChooseNumberViewController.swift */; };
-		4FC5255F280DE027000BAC13 /* ChooseNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FC5255D280DE027000BAC13 /* ChooseNumberViewController.xib */; };
+		4FC5255E280DE027000BAC13 /* ChooseElementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5255C280DE027000BAC13 /* ChooseElementViewController.swift */; };
+		4FC5255F280DE027000BAC13 /* ChooseElementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FC5255D280DE027000BAC13 /* ChooseElementViewController.xib */; };
 		4FC5B99F2800BCE3000CB522 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5B99E2800BCE3000CB522 /* StartViewController.swift */; };
 		4FEC12BA2804B69600DAB1EE /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC12B82804B69600DAB1EE /* GameOverViewController.swift */; };
 		4FEC12BB2804B69600DAB1EE /* GameOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FEC12B92804B69600DAB1EE /* GameOverViewController.xib */; };
@@ -52,6 +58,12 @@
 		4F233BB427F4B9B20042492F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3B18732808A00F007204CD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4F47061D281E69F6008F32F9 /* UICollectionViewCell+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Identifier.swift"; sourceTree = "<group>"; };
+		4F47061F282186CC008F32F9 /* NumberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberModel.swift; sourceTree = "<group>"; };
+		4F47062128218845008F32F9 /* LetterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterModel.swift; sourceTree = "<group>"; };
+		4F47062428266BD4008F32F9 /* MahjongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MahjongViewController.swift; sourceTree = "<group>"; };
+		4F47062528266BD4008F32F9 /* MahjongViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MahjongViewController.xib; sourceTree = "<group>"; };
+		4F47062828266DDF008F32F9 /* MahjongCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MahjongCollectionViewCell.swift; sourceTree = "<group>"; };
+		4F47062928266DDF008F32F9 /* MahjongCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MahjongCollectionViewCell.xib; sourceTree = "<group>"; };
 		4F8F3A84281969C000418C82 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F8F3A85281969C000418C82 /* GameCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameCollectionViewCell.xib; sourceTree = "<group>"; };
 		4F8F3A8A2819A78000418C82 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
@@ -71,8 +83,8 @@
 		4FA9F80C2817D94200A39E0C /* SnakeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SnakeViewController.xib; sourceTree = "<group>"; };
 		4FA9F80E2817FC6600A39E0C /* MatchColorsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchColorsViewController.xib; sourceTree = "<group>"; };
 		4FA9F812281814BC00A39E0C /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
-		4FC5255C280DE027000BAC13 /* ChooseNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseNumberViewController.swift; sourceTree = "<group>"; };
-		4FC5255D280DE027000BAC13 /* ChooseNumberViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseNumberViewController.xib; sourceTree = "<group>"; };
+		4FC5255C280DE027000BAC13 /* ChooseElementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseElementViewController.swift; sourceTree = "<group>"; };
+		4FC5255D280DE027000BAC13 /* ChooseElementViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseElementViewController.xib; sourceTree = "<group>"; };
 		4FC5B99E2800BCE3000CB522 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		4FEC12B82804B69600DAB1EE /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		4FEC12B92804B69600DAB1EE /* GameOverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameOverViewController.xib; sourceTree = "<group>"; };
@@ -118,6 +130,17 @@
 			path = Toymax;
 			sourceTree = "<group>";
 		};
+		4F47062328266B5C008F32F9 /* Mahjong */ = {
+			isa = PBXGroup;
+			children = (
+				4F47062428266BD4008F32F9 /* MahjongViewController.swift */,
+				4F47062528266BD4008F32F9 /* MahjongViewController.xib */,
+				4F47062828266DDF008F32F9 /* MahjongCollectionViewCell.swift */,
+				4F47062928266DDF008F32F9 /* MahjongCollectionViewCell.xib */,
+			);
+			path = Mahjong;
+			sourceTree = "<group>";
+		};
 		4F8F3A8E281D1C6900418C82 /* Games */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +148,7 @@
 				4F8F3A8F281D1C7900418C82 /* Match Colors */,
 				4F8F3A90281D1CA900418C82 /* Snake */,
 				4F8F3A91281D1CC200418C82 /* Choose Nubmer */,
+				4F47062328266B5C008F32F9 /* Mahjong */,
 				4FEC12BE2806FBC000DAB1EE /* GameLibrary.swift */,
 			);
 			path = Games;
@@ -151,8 +175,10 @@
 		4F8F3A91281D1CC200418C82 /* Choose Nubmer */ = {
 			isa = PBXGroup;
 			children = (
-				4FC5255C280DE027000BAC13 /* ChooseNumberViewController.swift */,
-				4FC5255D280DE027000BAC13 /* ChooseNumberViewController.xib */,
+				4FC5255C280DE027000BAC13 /* ChooseElementViewController.swift */,
+				4F47062128218845008F32F9 /* LetterModel.swift */,
+				4F47061F282186CC008F32F9 /* NumberModel.swift */,
+				4FC5255D280DE027000BAC13 /* ChooseElementViewController.xib */,
 			);
 			path = "Choose Nubmer";
 			sourceTree = "<group>";
@@ -318,8 +344,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F47062728266BD4008F32F9 /* MahjongViewController.xib in Resources */,
 				4FA9F7FF2811898D00A39E0C /* zero.m4a in Resources */,
 				4FA9F8002811898D00A39E0C /* one.m4a in Resources */,
+				4F47062B28266DDF008F32F9 /* MahjongCollectionViewCell.xib in Resources */,
 				4FA9F8012811898D00A39E0C /* two.m4a in Resources */,
 				4FA9F813281814BC00A39E0C /* StartViewController.xib in Resources */,
 				4FA9F8022811898D00A39E0C /* three.m4a in Resources */,
@@ -333,7 +361,7 @@
 				4F8F3A8D2819A78000418C82 /* SectionHeader.xib in Resources */,
 				4FA9F8082811898D00A39E0C /* nine.m4a in Resources */,
 				4FA9F8092811898D00A39E0C /* ten.m4a in Resources */,
-				4FC5255F280DE027000BAC13 /* ChooseNumberViewController.xib in Resources */,
+				4FC5255F280DE027000BAC13 /* ChooseElementViewController.xib in Resources */,
 				4F8F3A87281969C000418C82 /* GameCollectionViewCell.xib in Resources */,
 				4F233BB327F4B9B20042492F /* LaunchScreen.storyboard in Resources */,
 				4FEC12BB2804B69600DAB1EE /* GameOverViewController.xib in Resources */,
@@ -348,17 +376,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FC5255E280DE027000BAC13 /* ChooseNumberViewController.swift in Sources */,
+				4F470620282186CC008F32F9 /* NumberModel.swift in Sources */,
+				4FC5255E280DE027000BAC13 /* ChooseElementViewController.swift in Sources */,
 				4FEC12BF2806FBC000DAB1EE /* GameLibrary.swift in Sources */,
 				4F8F3A86281969C000418C82 /* GameCollectionViewCell.swift in Sources */,
 				4FA9F80B2812944B00A39E0C /* UIView+RoundedBorder.swift in Sources */,
 				4F233BAB27F4B9B00042492F /* MatchColorsViewController.swift in Sources */,
+				4F47062228218845008F32F9 /* LetterModel.swift in Sources */,
 				4FC5B99F2800BCE3000CB522 /* StartViewController.swift in Sources */,
 				4F233BA727F4B9B00042492F /* AppDelegate.swift in Sources */,
+				4F47062628266BD4008F32F9 /* MahjongViewController.swift in Sources */,
 				4F47061E281E69F6008F32F9 /* UICollectionViewCell+Identifier.swift in Sources */,
 				4F3B18742808A010007204CD /* BaseViewController.swift in Sources */,
 				4F8F3A8C2819A78000418C82 /* SectionHeader.swift in Sources */,
 				4FEC12C12806FE0900DAB1EE /* SnakeViewController.swift in Sources */,
+				4F47062A28266DDF008F32F9 /* MahjongCollectionViewCell.swift in Sources */,
 				4F233BA927F4B9B00042492F /* SceneDelegate.swift in Sources */,
 				4FEC12BA2804B69600DAB1EE /* GameOverViewController.swift in Sources */,
 			);
