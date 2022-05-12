@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window.windowScene = windowScene
         
-        let startViewController = StartViewController(nibName: "StartViewController", bundle: nil)
+        let startViewController = MahjongViewController(nibName: "MahjongViewController", bundle: nil)
 //        let navigation = UINavigationController(rootViewController: startViewController)
         self.window = window
         window.rootViewController = startViewController

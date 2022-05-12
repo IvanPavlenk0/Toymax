@@ -17,7 +17,7 @@ class GameLibrary {
     
     let gameWithName: [GameInfo] = [
         (GameInfo(gameName: "Match colors", gameAsset: "MatchColors", viewController: { MatchColorsViewController() })),
-        (GameInfo(gameName: "Snake", gameAsset: "Snake", viewController: { SnakeViewController() })),
+        (GameInfo(gameName: "Wurm", gameAsset: "Wurm", viewController: { SnakeViewController() })),
         (GameInfo(gameName: "Numbers", gameAsset: "Numbers", viewController: { ChooseElementViewController() }))]
     
 }
